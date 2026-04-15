@@ -56,15 +56,15 @@ The **Random Forest Classifier** achieved the best balance between precision and
 
 ### Confusion Matrix
 *(The model showed a high recall for stress detection after fixing class imbalance).*
-![Confusion Matrix](images\confussion_matrix.png)
+![Confusion Matrix](images/confussion_matrix.png)
 
 ### Multiclass ROC-AUC (One-vs-Rest)
 *(The AUC score for Physical Activity was nearly perfect, while Stress and Rest showed strong, robust separation).*
-![ROC AUC Curve](images\AUC_ROC.png)
+![ROC AUC Curve](images/AUC_ROC.png)
 
 ### Feature Importance
 Interpretability analysis revealed that the model correctly relied on physiological markers (like EDA peaks and HRV metrics) to detect stress, rather than relying solely on accelerometer data.
-![Feature Importance](images\feature_importance.png)
+![Feature Importance](images/feature_importance.png)
 
 ## 🚀 How to Run
 
