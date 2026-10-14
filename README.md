@@ -1,8 +1,8 @@
-# Wearable Stress & Activity Classification ⌚🧠🏃‍♂️
+# Wearable Stress & Activity Classification
 
 > A machine learning pipeline that classifies three physiological states (Rest, Cognitive Stress, Physical Activity) from Empatica E4 wearable data, evaluated on patients the model has never seen.
 
-## 📌 Project Overview
+## Project Overview
 
 The goal is to distinguish three physiological states using non-invasive wearable data. Physical activity is easy to detect from movement; the real challenge is telling **cognitive stress** apart from **rest**, since both involve little movement.
 
@@ -32,7 +32,7 @@ Data was collected with the **Empatica E4** wristband, which records:
 
 Please refer to the original authors for the experimental protocol, license and citation requirements. The stress and anaerobic-exercise sessions are used; the aerobic sessions are not part of the final model.
 
-## ⚙️ Methodology & Pipeline
+## Methodology & Pipeline
 
 ### 1. Feature extraction (`flirt`)
 Statistical, time-domain and frequency-domain features were extracted from each labeled segment with the [`flirt`](https://github.com/im-ethz/flirt) toolkit. This yields 179 columns per segment.
@@ -52,7 +52,7 @@ The train/test split uses **`GroupShuffleSplit`** grouped by patient ID (`PxID`)
 ### 5. Modeling
 Six models were tuned with grid search: Random Forest, XGBoost, SVM, Logistic Regression, MLP and KNN.
 
-## 📈 Results
+## Results
 
 Held-out patients, macro F1 and accuracy:
 
@@ -81,14 +81,14 @@ The most important features are dominated by the **accelerometer**, which is wha
 
 ![Feature Importance](images/feature_importance.png)
 
-## ⚠️ Limitations
+## Limitations
 
 * Small number of patients; results can change noticeably with another split.
 * Stress vs. rest is the weakest part of the model (F1 0.70).
 * Controlled-protocol data from one device; no claim of performance in daily life.
 * Not validated clinically.
 
-## 🚀 How to Run
+## How to Run
 
 1. Clone the repository:
    ```bash
@@ -107,6 +107,6 @@ The most important features are dominated by the **accelerometer**, which is wha
    1. `biosignals_featureExtraction.ipynb`
    2. `biosignals_modelTraining.ipynb`
 
-## 🤝 Acknowledgements
+## Acknowledgements
 
 Thanks to the authors of the `flirt` library and to the researchers who released the Empatica E4 dataset openly.
